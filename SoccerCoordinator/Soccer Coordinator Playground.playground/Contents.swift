@@ -2,12 +2,12 @@
 
 /*
  
- PART 1: Choose an appropriate data type to store information for each player (Name, Team, Guardian Name, Practice Date/Time).
+ PART 1: Choose an appropriate data type to store information for each player (Name, Guardian Name, Experience, Height).
  
  Next, create an empty collection variable to hold all the players’ data.
  
  
- PART 2: Assign all 18 players to teams, experience level on all teams bust be the same. Store each teams player in its own new colllection variable.
+ PART 2: Assign all 18 players to teams, experience level on all teams must be the same. Store each teams player in its own new colllection variable.
  
  
  PART 3: Create Logic that generates a letter for all of the players guardians, letting them know which team their child has been placed on and when they should attend their first team team practice.
@@ -95,30 +95,44 @@ var unexperiencedSoccerPlayers = 0
 
 // This function is iterating through all 18 players to count how many of them are experienced
 
+
+
 func gettingPlayersExperience() {
-    
+
     for player in playerArray {
         
-        // this if statement checks to see if the player has experience to get a total count. If yes, add 1. If not also add 1.
+        // checking to see if the soccerExperience key returns yes
+    
+    if player["soccerExperience"] == "yes" {
         
-        if ["soccerExperience"] == ["yes"] {
-            
-            
-            experiencedSoccerPlayers += 1
-            
-            
-        } else {
-            
-            unexperiencedSoccerPlayers += 1
-            
-        }
+        experiencedSoccerPlayers += 1
+        
+    } else {
+        
+        unexperiencedSoccerPlayers += 1
+        
         
     }
+    
+    
 }
 
+}
+   
 // Call the function
 
 gettingPlayersExperience()
+
+let teams = ["Sharks", "Dragons", "Raptors"]
+
+
+var Sharks = [""]
+
+var Dragons = [""]
+
+var Raptors = [""]
+
+
 
 
 
