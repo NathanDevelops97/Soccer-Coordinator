@@ -142,23 +142,31 @@ let dragonsFirstGame = "March 17, 1PM"
 let raptorsFirstGame = "March 18, 1PM"
 
 func assignPlayers() {
-    for playersOnTeams in playerArray {
+    for player in playerArray {
         
-        // This is saying if Sharks.count or players in the array is less than all of the players in the playerArray divided by 3 because it has to be split by 3 teams and the Sharks.count or players in the array / 2 is less than or equal to unexperiencedSoccerPlayers divided by 3 and the Sharks.count or players in the array / 2 is less than or equal to the experiencedSoccerPlayers divided by 3 append the players amongst the Sharks team. 3 of each type
+        // This is saying if Sharks.count or players in the array is less than all of the players in the playerArray divided by 3 because it has to be split by 3 teams and the Sharks.count or players in the array / 2 is less than or equal to nonexperiencedSoccerPlayers divided by 3 and the Sharks.count or players in the array / 2 is less than or equal to the experiencedPlayers divided by 3 append the players amongst the Sharks team. 3 of each type
         
-        if Sharks.count < playerArray / 3 && Sharks.count / 2 <= unexperiencedSoccerPlayers / 3 && Sharks.count / 2 <= experiencedSoccerPlayers / 3 {
+        if Sharks.count < playerArray.count / 3 && Sharks.count / 2 <= nonexperiencedSoccerPlayers / 3 && Sharks.count / 2 <= experiencedPlayers / 3 {
             
-            Sharks.append(experiencedSoccerPlayers + unexperiencedSoccerPlayers)
+            Sharks.append("\(experiencedPlayers) + \(nonexperiencedSoccerPlayers)")
+       
+        
+        } else if Dragons.count < playerArray.count / 3 && Dragons.count / 2 <= nonexperiencedSoccerPlayers / 3 && Dragons.count / 2 <= experiencedPlayers / 3  {
+            
+            Dragons.append("\(experiencedPlayers) + \(nonexperiencedSoccerPlayers)")
+
+            
+        } else if Raptors.count < playerArray.count / 3 && Raptors.count / 2 <= nonexperiencedSoccerPlayers / 3 && Raptors.count / 2 <= experiencedPlayers / 3  {
+            
+            Raptors.append("\(experiencedPlayers) + \(nonexperiencedSoccerPlayers)")
+
+            
         }
-        
-        
-        
     }
-        
-        
-        
     
 }
+
+assignPlayers()
 
 
 
