@@ -123,14 +123,45 @@ func gettingPlayersExperience() {
 
 gettingPlayersExperience()
 
+var experiencedPlayers = experiencedSoccerPlayers
+
+var nonexperiencedSoccerPlayers = unexperiencedSoccerPlayers
+
 let teams = ["Sharks", "Dragons", "Raptors"]
 
+// Team Variables
 
 var Sharks = [""]
-
 var Dragons = [""]
-
 var Raptors = [""]
+
+// Team Practice Constants
+
+let sharksFirstGame = "March 17, 3PM"
+let dragonsFirstGame = "March 17, 1PM"
+let raptorsFirstGame = "March 18, 1PM"
+
+func assignPlayers() {
+    for playersOnTeams in playerArray {
+        
+        // This is saying if Sharks.count or players in the array is less than all of the players in the playerArray divided by 3 because it has to be split by 3 teams and the Sharks.count or players in the array / 2 is less than or equal to unexperiencedSoccerPlayers divided by 3 and the Sharks.count or players in the array / 2 is less than or equal to the experiencedSoccerPlayers divided by 3 append the players amongst the Sharks team. 3 of each type
+        
+        if Sharks.count < playerArray / 3 && Sharks.count / 2 <= unexperiencedSoccerPlayers / 3 && Sharks.count / 2 <= experiencedSoccerPlayers / 3 {
+            
+            Sharks.append(experiencedSoccerPlayers + unexperiencedSoccerPlayers)
+        }
+        
+        
+        
+    }
+        
+        
+        
+    
+}
+
+
+
 
 
 
