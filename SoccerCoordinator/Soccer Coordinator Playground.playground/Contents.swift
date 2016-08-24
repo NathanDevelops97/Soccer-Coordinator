@@ -160,11 +160,11 @@ var inexperiencedPlayers: [[String:AnyObject]] = []
 // Function to count experienced/non-experienced players
 
 
-func sortPlayersExperiece() -> Int {
+func countExperience() {
     
     for player in playerArray {
         
-        if player["SoccerExperience"] == true {
+        if player["experience"] == true {
             
             experiencedPlayers.append(player)
 
@@ -179,29 +179,32 @@ func sortPlayersExperiece() -> Int {
 }
 
 
+print(experiencedPlayers)
+
+func sortPlayersExperiece() {
+
 for players in playerArray {
     
     
     if sharks.count < playerArray.count / 3 && sharks.count / 2 <= experiencedPlayers / 3 && sharks.count / 2 <= inexperiencedPlayers / 3 {
         
-        sharks[key] = value
+        
         
     } else if dragons.count < playerArray.count / 3 && dragons.count / 2 <= experiencedPlayers / 3 && dragons.count / 2 <= inexperiencedPlayers / 3 {
        
-        dragons[key] = value
 
         
     } else if raptors.count < playerArray.count / 3 && raptors.count / 2 <= experiencedPlayers / 3 && raptors.count / 2 <= inexperiencedPlayers / 3 {
 
-        raptors[key] = value
 
     } else {
         
         print("Can't Assign The Player")
     }
     
-}
+ }
 
+}
 
 func printPlayerLetters() {
     
