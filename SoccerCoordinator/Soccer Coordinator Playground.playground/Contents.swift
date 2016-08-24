@@ -105,23 +105,51 @@ var numberOfInexperiencedPlayers = playerArray.count - numberOfExperiencedPlayer
 for (key, value) in playerArray {
     
     
-    if Sharks.count < playerArray.count / 3 && Sharks.count / 2 <= numberOfExperiencedPlayers / 3 && Sharks.count / <= numberOfInexperiencedPlayers / 3 {
+    if Sharks.count < playerArray.count / 3 && Sharks.count / 2 <= numberOfExperiencedPlayers / 3 && Sharks.count / <=numberOfInexperiencedPlayers / 3 {
         
         Sharks[key] = value
         
-    } else if Dragons.count < playerArray.count / 3 && Dragons.count / 2 <= numberOfExperiencedPlayers / 3 && Dragons.count / <= numberOfInexperiencedPlayers / 3 {
+    } else if Dragons.count < playerArray.count / 3 && Dragons.count / 2 <= numberOfExperiencedPlayers / 3 && Dragons.count / <=numberOfInexperiencedPlayers / 3 {
        
         Dragons[key] = value
 
         
-    } else if Raptors.count < playerArray.count / 3 && Raptors.count / 2 <= numberOfExperiencedPlayers / 3 && Raptors.count / <= numberOfInexperiencedPlayers / 3 {
+    } else if Raptors.count < playerArray.count / 3 && Raptors.count / 2 <= numberOfExperiencedPlayers / 3 && Raptors.count / <=numberOfInexperiencedPlayers / 3 {
 
         Raptors[key] = value
 
+    } else {
+        
+        print("Can't Assign The Player \(key, value) ")
     }
-
     
 }
+
+
+func printPlayerLetters() {
+    
+    
+    for (key, value) in Sharks {
+        
+        print("Hello \(value[2]), your child \(key) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
+        
+    }
+    
+    for (key, value) in Dragons {
+       
+        print("Hello \(value[2]), your child \(key) is playing their first game with the Dragons! Join us on \(dragonsFirstGame)")
+        
+    }
+    
+    for (key, value) in Raptors {
+       
+        print("Hello \(value[2]), your child \(key) is playing their first game with the Raptors! Join us on \(raptorsFirstGame)")
+        
+    }
+}
+
+printPlayerLetters()
+
 
 
    
