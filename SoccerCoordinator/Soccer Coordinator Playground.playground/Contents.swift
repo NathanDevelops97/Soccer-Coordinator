@@ -135,9 +135,9 @@ var playerArray = [player1, player2, player3, player4, player5, player6, player7
 
 // Team Variables. It's a variable if we decide to add more players to the roster
 
-var Sharks = [String: Array<AnyObject>]()
-var Dragons = [String: Array<AnyObject>]()
-var Raptors = [String: Array<AnyObject>]()
+var sharks = [String:AnyObject]()
+var dragons = [String:AnyObject]()
+var raptors = [String:AnyObject]()
 
 
 // Team Practice Constants
@@ -182,18 +182,18 @@ func sortPlayersExperiece() -> Int {
 for players in playerArray {
     
     
-    if Sharks.count < playerArray.count / 3 && Sharks.count / 2 <= experiencedPlayers / 3 && Sharks.count / 2 <= inexperiencedPlayers / 3 {
+    if sharks.count < playerArray.count / 3 && sharks.count / 2 <= experiencedPlayers / 3 && sharks.count / 2 <= inexperiencedPlayers / 3 {
         
-        Sharks[key] = value
+        sharks[key] = value
         
-    } else if Dragons.count < playerArray.count / 3 && Dragons.count / 2 <= experiencedPlayers / 3 && Dragons.count / 2 <= inexperiencedPlayers / 3 {
+    } else if dragons.count < playerArray.count / 3 && dragons.count / 2 <= experiencedPlayers / 3 && dragons.count / 2 <= inexperiencedPlayers / 3 {
        
-        Dragons[key] = value
+        dragons[key] = value
 
         
-    } else if Raptors.count < playerArray.count / 3 && Raptors.count / 2 <= experiencedPlayers / 3 && Raptors.count / 2 <= inexperiencedPlayers / 3 {
+    } else if raptors.count < playerArray.count / 3 && raptors.count / 2 <= experiencedPlayers / 3 && raptors.count / 2 <= inexperiencedPlayers / 3 {
 
-        Raptors[key] = value
+        raptors[key] = value
 
     } else {
         
@@ -206,19 +206,19 @@ for players in playerArray {
 func printPlayerLetters() {
     
     
-    for individualPlayer in Sharks {
+    for individualPlayer in sharks {
         
         print("Hello \(value[2]), your child \(key) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
         
     }
     
-    for individualPlayer in Dragons {
+    for individualPlayer in dragons {
        
         print("Hello \(value[2]), your child \(key) is playing their first game with the Dragons! Join us on \(dragonsFirstGame)")
         
     }
     
-    for individualPlayer in Raptors {
+    for individualPlayer in raptors {
        
         print("Hello \(value[2]), your child \(key) is playing their first game with the Raptors! Join us on \(raptorsFirstGame)")
         
