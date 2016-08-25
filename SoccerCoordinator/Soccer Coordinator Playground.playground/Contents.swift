@@ -135,9 +135,9 @@ var playerArray = [player1, player2, player3, player4, player5, player6, player7
 
 // Team Variables. It's a variable if we decide to add more players to the roster
 
-var sharks = [String:AnyObject]()
-var dragons = [String:AnyObject]()
-var raptors = [String:AnyObject]()
+var sharks: [[String:AnyObject]] = []
+var dragons: [[String:AnyObject]] = []
+var raptors: [[String:AnyObject]] = []
 
 
 // Team Practice Constants
@@ -178,8 +178,11 @@ func countExperience() {
     
 }
 
+countExperience()
 
 print(experiencedPlayers)
+print(inexperiencedPlayers)
+
 
 func sortExperiencedPlayers() {
     
@@ -206,6 +209,31 @@ func sortExperiencedPlayers() {
 
 sortExperiencedPlayers()
 
+func sortInExperiencedPlayers() {
+    
+    var index = 0
+    
+    while index < inexperiencedPlayers.count {
+        
+        if sharks.count < 3 {
+            
+            sharks.append(inexperiencedPlayers[index])
+            
+        }else if raptors.count < 3 {
+            
+            raptors.append(inexperiencedPlayers[index])
+            
+        }else if dragons.count < 3 {
+            
+            dragons.append(inexperiencedPlayers[index])
+        }
+        
+        index += 1
+    }
+}
+
+sortInExperiencedPlayers()
+
 print("\(sharks)\n")
 print("\(dragons)\n")
 print("\(raptors)\n")
@@ -216,25 +244,24 @@ func printPlayerLetters() {
     
     for individualPlayer in sharks {
         
-        print("Hello \(sharks["guardian"]!), your child \(sharks["name"]!) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
+        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
         
     }
     
     for individualPlayer in dragons {
        
-        print("Hello \(dragons["guardian"]!), your child \(dragons["name"]!) is playing their first game with the Sharks! Join us on \(dragonsFirstGame)")
+        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Dragons! Join us on \(dragonsFirstGame)")
         
     }
     
     for individualPlayer in raptors {
        
-        print("Hello \(raptors["guardian"]!), your child \(raptors["name"]!) is playing their first game with the Sharks! Join us on \(raptorsFirstGame)")
+        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Raptors! Join us on \(raptorsFirstGame)")
         
     }
 }
 
 printPlayerLetters()
-
 
 
    
