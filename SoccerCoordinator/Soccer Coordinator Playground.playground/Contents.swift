@@ -2,9 +2,7 @@
 
 /*
  
- PART 1: Choose an appropriate data type to store information for each player (Name, Guardian Name, Experience, Height).
- 
- Next, create an empty collection variable to hold all the players’ data.
+ // PART 1: Choose an appropriate data type to store information for each player (Name, Team, Height, and Guardian Name). Then create an empty collection variable to hold all the players’ data.
  
  
  PART 2: Assign all 18 players to teams, experience level on all teams must be the same. Store each teams player in its own new colllection variable.
@@ -18,9 +16,6 @@
  
 */
 
-
-
-
 import Foundation
 
 
@@ -28,13 +23,18 @@ import Foundation
 
 
 
-// PART 1: Choose an appropriate data type to store information for each player (Name, Team, Guardian Name, Practice Date/Time).
+
+// PART 1: Choose an appropriate data type to store information for each player (Name, Team, Height, and Guardian Name). Then create an empty collection variable to hold all the players’ data.
 
 
-// Individual Players. Created a collection to hold all of the players data
 
 
 
+
+
+
+
+// Individual Players Data
 
 
 let player1 = ["name": "Joe Smith",
@@ -128,6 +128,10 @@ let player18 = ["name": "Herschel Krustofski",
                 "guardian": "Hyman and Rachel Krustofski"]
 
 
+
+
+// An array to store all of the players. Var because of changeability
+
 var playerArray = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 
@@ -139,6 +143,7 @@ var sharks: [[String:AnyObject]] = []
 var dragons: [[String:AnyObject]] = []
 var raptors: [[String:AnyObject]] = []
 
+let teams = ["Sharks, Dragons, Raptors"]
 
 // Team Practice Constants
 
@@ -150,11 +155,6 @@ let raptorsFirstGame = "March 18, 1PM"
 
 var experiencedPlayers: [[String:AnyObject]] = []
 var inexperiencedPlayers: [[String:AnyObject]] = []
-
-
-
-
-// PART 2: Assign all 18 players to teams, experience level on all teams bust be the same. Store each teams player in its own new colllection variable.
 
 
 // Function to count experienced/non-experienced players
@@ -178,10 +178,20 @@ func countExperience() {
     
 }
 
+
+
+// Calling The Function
+
+
 countExperience()
+
+// Printing the experienced and inexperienced player arrays
 
 print(experiencedPlayers)
 print(inexperiencedPlayers)
+
+
+// PART 2: Assign all 18 players to teams, experience level on all teams must be the same. Store each teams player in its own new colllection variable.
 
 
 func sortExperiencedPlayers() {
@@ -207,9 +217,18 @@ func sortExperiencedPlayers() {
     }
 }
 
+
+
 sortExperiencedPlayers()
 
-func sortInExperiencedPlayers() {
+
+
+// Creating a function to sort the inexperienced teams and adding them(.append) to each team
+
+// I was struggling to figure out how to sort the InExperiencedPlayers because I had reused the same function for my experienced players. But the if statement would only run(append each new player) if the count was < 3. Which it wasn't after I had appended the experiencedPlayers. To fix it, I changed the count to < 6.
+
+
+func sortInexperiencedPlayers() {
     
     var index = 0
     
@@ -232,11 +251,22 @@ func sortInExperiencedPlayers() {
     }
 }
 
-sortInExperiencedPlayers()
+
+sortInexperiencedPlayers()
+
+
+// Printing each teams String to show players
 
 print("\(sharks)\n")
 print("\(dragons)\n")
 print("\(raptors)\n")
+
+
+// PART 3: Create Logic that generates a letter for all of the players guardians, letting them know which team their child has been placed on and when they should attend their first team team practice.
+
+
+
+// Function declared to print each players letters using their guardians names and player names by accessing each individual players dictionary key
 
 
 func printPlayerLetters() {
@@ -260,6 +290,8 @@ func printPlayerLetters() {
         
     }
 }
+
+
 
 printPlayerLetters()
 
