@@ -188,7 +188,7 @@ func sortExperiencedPlayers() {
     
     var index = 0
     
-    while index < experiencedPlayers.count {
+    while index < experiencedPlayers.count  {
         
         if sharks.count < 3 {
             
@@ -215,15 +215,15 @@ func sortInExperiencedPlayers() {
     
     while index < inexperiencedPlayers.count {
         
-        if sharks.count < 3 {
+        if sharks.count < 6 {
             
             sharks.append(inexperiencedPlayers[index])
             
-        }else if raptors.count < 3 {
+        }else if raptors.count < 6 {
             
             raptors.append(inexperiencedPlayers[index])
             
-        }else if dragons.count < 3 {
+        }else if dragons.count < 6 {
             
             dragons.append(inexperiencedPlayers[index])
         }
