@@ -216,19 +216,19 @@ func printPlayerLetters() {
     
     for individualPlayer in sharks {
         
-        print("Hello \(sharks["guardian"]), your child \(sharks["name"]) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
+        print("Hello \(sharks["guardian"]!), your child \(sharks["name"]!) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
         
     }
     
     for individualPlayer in dragons {
        
-        print("Hello \(dragons["guardian"]), your child \(dragons["name"]) is playing their first game with the Sharks! Join us on \(dragonsFirstGame)")
+        print("Hello \(dragons["guardian"]!), your child \(dragons["name"]!) is playing their first game with the Sharks! Join us on \(dragonsFirstGame)")
         
     }
     
     for individualPlayer in raptors {
        
-        print("Hello \(raptors["guardian"]), your child \(raptors["name"]) is playing their first game with the Sharks! Join us on \(raptorsFirstGame)")
+        print("Hello \(raptors["guardian"]!), your child \(raptors["name"]!) is playing their first game with the Sharks! Join us on \(raptorsFirstGame)")
         
     }
 }
