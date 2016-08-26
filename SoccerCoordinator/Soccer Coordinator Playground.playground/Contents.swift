@@ -143,7 +143,6 @@ var sharks: [[String:AnyObject]] = []
 var dragons: [[String:AnyObject]] = []
 var raptors: [[String:AnyObject]] = []
 
-let teams = ["Sharks, Dragons, Raptors"]
 
 // Team Practice Constants
 
@@ -159,100 +158,114 @@ var inexperiencedPlayers: [[String:AnyObject]] = []
 
 // Function to count experienced/non-experienced players
 
-
-func countExperience() {
-    
-    for player in playerArray {
-        
-        if player["experience"] == true {
-            
-            experiencedPlayers.append(player)
-
-            
-        } else {
-            
-            inexperiencedPlayers.append(player)
-        }
-        
-    }
-    
-}
+//
+//func countExperience() {
+//    
+//    for player in playerArray {
+//        
+//        if player["experience"] == true {
+//            
+//            experiencedPlayers.append(player)
+//
+//            
+//        } else {
+//            
+//            inexperiencedPlayers.append(player)
+//        }
+//        
+//    }
+//    
+//}
 
 
 
 // Calling The Function
 
 
-countExperience()
+//countExperience()
 
 // Printing the experienced and inexperienced player arrays
 
 print(experiencedPlayers)
 print(inexperiencedPlayers)
 
+let teams = ["Sharks, Dragons, Raptors"]
+
+let allExperiencedPlayers = experiencedPlayers.count / teams.count
+let allInExperiecedPlayers = inexperiencedPlayers.count / teams.count
+
+let totalPlayersForEachTeam = allInExperiecedPlayers + allExperiencedPlayers
+
+var sharksExpPlayers = 0
+
+var sharksInExpPlayers = 0
+
+var dragonsExpPlayers = 0
+
+var dragonsInExpPlayers = 0
+
+var raptorsExpPlayers = 0
+
+var raptorsInExpPlayers = 0
+
 
 // PART 2: Assign all 18 players to teams, experience level on all teams must be the same. Store each teams player in its own new colllection variable.
 
 
-func sortExperiencedPlayers() {
+func sortAllPlayers() {
     
-    var index = 0
     
-    while index < experiencedPlayers.count  {
+    for player in playerArray {
         
-        if sharks.count < 3 {
+        if (sharks.count < totalPlayersForEachTeam && sharksExpPlayers < allExperiencedPlayers && player["experience"] ==  true) {
             
-            sharks.append(experiencedPlayers[index])
+            sharksExpPlayers += 1
             
-        }else if raptors.count < 3 {
+            sharks.append(player)
             
-            raptors.append(experiencedPlayers[index])
+        } else if (sharks.count < totalPlayersForEachTeam && sharksInExpPlayers < allInExperiecedPlayers && player["experience"] == false) {
             
-        }else if dragons.count < 3 {
+            sharksInExpPlayers += 1
             
-            dragons.append(experiencedPlayers[index])
+            sharks.append(player)
+            
+        } else if (dragons.count < totalPlayersForEachTeam && dragonsExpPlayers < allExperiencedPlayers && player["experience"] == true) {
+            
+            dragonsExpPlayers += 1
+            
+            dragons.append(player)
+            
+        } else if (dragons.count < totalPlayersForEachTeam && sharksInExpPlayers < allInExperiecedPlayers && player["experience"] == false) {
+            
+            dragonsInExpPlayers += 1
+            
+            dragons.append(player)
+            
+        } else if (raptors.count < totalPlayersForEachTeam && raptorsExpPlayers < allExperiencedPlayers && player["experience"] == true) {
+            
+            raptorsExpPlayers += 1
+            
+            raptors.append(player)
+            
+        } else if (raptors.count < totalPlayersForEachTeam && raptorsInExpPlayers < allInExperiecedPlayers && player["experience"] == false) {
+            
+            raptorsInExpPlayers += 1
+            
+            raptors.append(player)
+            
         }
         
-        index += 1
     }
+    
 }
 
 
 
-sortExperiencedPlayers()
+sortAllPlayers()
 
 
 
-// Creating a function to sort the inexperienced teams and adding them(.append) to each team
 
-// I was struggling to figure out how to sort the InExperiencedPlayers because I had reused the same function for my experienced players. But the if statement would only run(append each new player) if the count was < 3. Which it wasn't after I had appended the experiencedPlayers. To fix it, I changed the count to < 6.
-
-
-func sortInexperiencedPlayers() {
-    
-    var index = 0
-    
-    while index < inexperiencedPlayers.count {
-        
-        if sharks.count < 6 {
-            
-            sharks.append(inexperiencedPlayers[index])
-            
-        }else if raptors.count < 6 {
-            
-            raptors.append(inexperiencedPlayers[index])
-            
-        }else if dragons.count < 6 {
-            
-            dragons.append(inexperiencedPlayers[index])
-        }
-        
-        index += 1
-    }
-}
-
-
-sortInexperiencedPlayers()
 
 
 // Printing each teams String to show players
