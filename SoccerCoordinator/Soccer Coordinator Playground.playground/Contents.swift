@@ -264,19 +264,19 @@ func printPlayerLetters() {
     
     for individualPlayer in sharks {
         
-        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
+        print("Hello \(individualPlayer["guardian"]!), your child \(individualPlayer["name"]!) is playing their first game with the Sharks! Join us on \(sharksFirstGame)")
         
     }
     
     for individualPlayer in dragons {
        
-        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Dragons! Join us on \(dragonsFirstGame)")
+        print("Hello \(individualPlayer["guardian"]!), your child \(individualPlayer["name"]!) is playing their first game with the Dragons! Join us on \(dragonsFirstGame)")
         
     }
     
     for individualPlayer in raptors {
        
-        print("Hello \(individualPlayer["guardian"]), your child \(individualPlayer["name"]) is playing their first game with the Raptors! Join us on \(raptorsFirstGame)")
+        print("Hello \(individualPlayer["guardian"]!), your child \(individualPlayer["name"]!) is playing their first game with the Raptors! Join us on \(raptorsFirstGame)")
         
     }
 }
