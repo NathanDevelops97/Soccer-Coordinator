@@ -21,17 +21,7 @@ import Foundation
 
 
 
-
-
-
 // PART 1: Choose an appropriate data type to store information for each player (Name, Team, Height, and Guardian Name). Then create an empty collection variable to hold all the players’ data.
-
-
-
-
-
-
-
 
 
 // Individual Players Data
@@ -135,8 +125,6 @@ let player18 = ["name": "Herschel Krustofski",
 var playerArray = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 
-
-
 // Team Variables. It's a variable if we decide to add more players to the roster
 
 var sharks: [[String:AnyObject]] = []
@@ -178,17 +166,13 @@ func countExperience() {
 }
 
 
-
-// Calling The Function
-
 countExperience()
 
-// Printing the experienced and inexperienced player arrays
 
 print(experiencedPlayers)
 print(inexperiencedPlayers)
 
-let teams = ["Sharks, Dragons, Raptors"]
+let teams = [sharks, dragons, raptors]
 
 let allExperiencedPlayers = experiencedPlayers.count / teams.count
 let allInExperiecedPlayers = inexperiencedPlayers.count / teams.count
@@ -234,7 +218,7 @@ func sortAllPlayers() {
             
             dragons.append(player)
             
-        } else if (dragons.count < totalPlayersForEachTeam && sharksInExpPlayers < allInExperiecedPlayers && player["experience"] == false) {
+        } else if (dragons.count < totalPlayersForEachTeam && dragonsInExpPlayers < allInExperiecedPlayers && player["experience"] == false) {
             
             dragonsInExpPlayers += 1
             
@@ -263,10 +247,6 @@ func sortAllPlayers() {
 sortAllPlayers()
 
 
-
-
-
-
 // Printing each teams String to show players
 
 print("\(sharks)\n")
@@ -277,11 +257,9 @@ print("\(raptors)\n")
 // PART 3: Create Logic that generates a letter for all of the players guardians, letting them know which team their child has been placed on and when they should attend their first team team practice.
 
 
-
-// Function declared to print each players letters using their guardians names and player names by accessing each individual players dictionary key
-
-
 func printPlayerLetters() {
+    
+    // For Each player in each team, write a letter out to their parents for their first game
     
     
     for individualPlayer in sharks {
