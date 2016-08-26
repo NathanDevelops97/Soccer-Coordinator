@@ -158,31 +158,30 @@ var inexperiencedPlayers: [[String:AnyObject]] = []
 
 // Function to count experienced/non-experienced players
 
-//
-//func countExperience() {
-//    
-//    for player in playerArray {
-//        
-//        if player["experience"] == true {
-//            
-//            experiencedPlayers.append(player)
-//
-//            
-//        } else {
-//            
-//            inexperiencedPlayers.append(player)
-//        }
-//        
-//    }
-//    
-//}
+
+func countExperience() {
+    
+    for player in playerArray {
+        
+        if player["experience"] == true {
+            
+            experiencedPlayers.append(player)
+
+            
+        } else {
+            
+            inexperiencedPlayers.append(player)
+        }
+        
+    }
+    
+}
 
 
 
 // Calling The Function
 
-
-//countExperience()
+countExperience()
 
 // Printing the experienced and inexperienced player arrays
 
